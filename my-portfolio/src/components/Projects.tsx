@@ -4,29 +4,79 @@ import PageDivider from "./PageDivider";
 
 const projects = [
   {
-    name: "FitStart",
-    description: "A comprehensive fitness platform connecting users with gyms through daily passes and membership cards.",
-    tech: ["Node.js", "Express", "MongoDB", "WebSockets", "JWT"],
-    features: ["Real-time check-ins", "QR pass redemption", "Gym partner management", "User authentication"],
-    github: "https://github.com/yashnandwani/fitstart",
-    live: "https://fitstart.com"
+    name: "Meal-Monkey",
+    description: "A food delivery application with seamless real-time order tracking, designed to handle 5,000+ concurrent users and ensure smooth, uninterrupted user experiences across platforms.",
+    tech: ["Flutter", "Firebase", "NodeJs", "MongoDB", "Google Maps", "Razorpay"],
+    features: [
+      "Real-time order tracking for 5,000+ users",
+      "Secure, scalable backend with NodeJs & MongoDB",
+      "Robust user authentication and real-time data sync",
+      "99.9% uptime infrastructure",
+      "Revamped UI with Flutter and state management",
+      "25% reduction in cart abandonment, 15% increase in conversions"
+    ],
+    period: "Feb 2025 – Jun 2025",
+    github: "https://github.com/yashnandwani/meal-monkey",
+    live: "https://meal-monkey-demo.com"
   },
   {
-    name: "Personal Finance Tracker",
-    description: "A web application for tracking personal finances, budgeting, and financial goal management.",
-    tech: ["Node.js", "Express", "MongoDB", "JWT", "REST API"],
-    features: ["Budget planning", "Expense categorization", "Goal tracking", "Secure authentication"],
-    github: "https://github.com/yashnandwani/finance-tracker",
-    live: "https://finance-tracker.com"
+    name: "Quizzler",
+    description: "A scalable quiz platform for 5,000+ tech students with 10+ topic-wise quizzes covering DevOps, Kubernetes, and Networking.",
+    tech: ["Flutter", "Firebase", "Gemini", "VertexAI"],
+    features: [
+      "Dynamic quiz generation with Gemini LLM",
+      "10+ topic-wise quizzes",
+      "Real-time backend with Firebase Firestore & Auth",
+      "Supports 10K+ quiz attempts and user management",
+      "80% reduction in manual curation via AI"
+    ],
+    period: "Nov 2024 – Jun 2025",
+    github: "https://github.com/yashnandwanii/Quizzler",
+    live: "https://quizzler-demo.com"
   },
   {
-    name: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with user management, product catalog, and payment integration.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-    features: ["Product catalog", "Shopping cart", "Payment processing", "Order management"],
-    github: "https://github.com/yashnandwani/ecommerce",
-    live: "https://ecommerce-demo.com"
-  }
+    name: "Task Management App",
+    description: "A productivity app for managing tasks, deadlines, and team collaboration with offline support.",
+    tech: ["Flutter", "Cubit", "SQLite", "Docker", "TypeScript"],
+    features: [
+      "Task creation, deadlines, and reminders",
+      "Offline support with SQLite",
+      "Team collaboration and status tracking",
+      "Dockerized backend for easy deployment"
+    ],
+    period: "2025",
+    github: "https://github.com/yashnandwanii/Task-Manager-App",
+    live: "https://task-manager-demo.com"
+  },
+  {
+    name: "News App",
+    description: "A modern news application with real-time updates, personalized feeds, and push notifications.",
+    tech: ["Flutter", "GetX", "Firebase"],
+    features: [
+      "Personalized news feed",
+      "Real-time updates and push notifications",
+      "Seamless navigation with GetX",
+      "Firebase backend for scalability and analytics"
+    ],
+    period: "2025",
+    github: "https://github.com/yashnandwanii/news_app",
+    live: "https://news-app-demo.com"
+  },
+  {
+    name: "Threads Social Media App",
+    description: "A social media platform for sharing threads, posts, and engaging with a vibrant community.",
+    tech: ["Flutter", "GetX", "Supabase"],
+    features: [
+      "Threaded posts and real-time comments",
+      "Supabase backend for instant data sync",
+      "Modern UI with Flutter and GetX",
+      "Community engagement features"
+    ],
+    period: "2025",
+    github: "https://github.com/yashnandwanii/Threads",
+    live: "https://threads-demo.com"
+  },
+  
 ];
 
 const Projects: React.FC = () => (

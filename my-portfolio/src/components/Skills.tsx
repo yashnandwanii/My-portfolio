@@ -6,21 +6,20 @@ const skillCategories = [
   {
     category: "Programming Languages",
     skills: [
-      { name: "JavaScript", level: 90 },
-      { name: "Python", level: 85 },
-      { name: "Java", level: 80 },
-      { name: "C++", level: 75 },
-      { name: "TypeScript", level: 85 }
+      { name: "Dart", level: 90 },
+      { name: "Java", level: 85 },
+      { name: "JavaScript", level: 80 },
+      { name: "C++", level: 75 }
+      
     ]
   },
   {
     category: "Frontend Development",
     skills: [
-      { name: "React", level: 90 },
-      { name: "HTML/CSS", level: 95 },
-      { name: "Tailwind CSS", level: 85 },
-      { name: "Next.js", level: 80 },
-      { name: "Vue.js", level: 70 }
+      { name: "Flutter", level: 90 },
+      { name: "GetX", level: 95 },
+      { name: "Cubit", level: 75 },
+      
     ]
   },
   {
@@ -30,25 +29,19 @@ const skillCategories = [
       { name: "Express.js", level: 85 },
       { name: "MongoDB", level: 80 },
       { name: "PostgreSQL", level: 75 },
-      { name: "Redis", level: 70 }
+      { name: "Firebase", level: 80 },
+      { name: "Supabase", level: 85 }
+      
     ]
   },
-  {
-    category: "Mobile Development",
-    skills: [
-      { name: "React Native", level: 85 },
-      { name: "Flutter", level: 80 },
-      { name: "Android (Kotlin)", level: 75 },
-      { name: "iOS (Swift)", level: 70 }
-    ]
-  },
+  
   {
     category: "Tools & Technologies",
     skills: [
       { name: "Git", level: 90 },
       { name: "Docker", level: 80 },
       { name: "AWS", level: 75 },
-      { name: "Firebase", level: 85 },
+      
       { name: "CI/CD", level: 70 }
     ]
   }
@@ -130,12 +123,11 @@ const Skills: React.FC = () => (
           "Data Structures & Algorithms",
           "System Design",
           "RESTful APIs",
-          "GraphQL",
-          "Microservices",
+          "SOLID Principles",
           "Agile/Scrum",
           "Problem Solving",
-          "Team Collaboration",
-          "Technical Writing"
+          "Team Collaboration"
+        
         ].map((skill, idx) => (
           <motion.div
             key={idx}

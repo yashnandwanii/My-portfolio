@@ -11,7 +11,9 @@ import {
   HiBars3,
   HiXMark,
   HiHeart,
-  HiCodeBracket
+  HiCodeBracket,
+  HiSun,
+  HiMoon
 } from "react-icons/hi2";
 import Loader from "./components/Loader";
 import Experience from "./components/Experience";
@@ -50,7 +52,7 @@ function useIsMobile() {
 
 function DynamicIsland() {
   const [isExpanded, setIsExpanded] = React.useState(false);
-  
+
   return (
     <div 
       className={`dynamic-island transition-all duration-500 cursor-pointer ${
@@ -85,20 +87,17 @@ function App() {
     <Router>
       <div className="min-h-screen w-full flex items-center justify-center dark-bg">
         <div
-          className={`phone-frame premium-iphone-frame ${
-            isMobile 
-              ? "w-full h-full max-w-full max-h-full bg-black" 
-              : "relative overflow-hidden"
-          }`}
-          style={isMobile ? {} : { 
-            width: 480, // Wider for iPhone 16 Pro Max
-            height: 1040, // Proportional height
-            maxWidth: "100vw", 
-            maxHeight: "100vh",
-            boxShadow: "0 0 0 2px #181f2e, 0 0 32px 4px rgba(99,102,241,0.12), 0 8px 40px 0 rgba(0,0,0,0.7)",
+          className="phone-frame premium-iphone-frame overflow-hidden"
+          style={isMobile ? {} : {
+            width: 520,
+            height: 1040,
+            maxWidth: '100vw',
+            maxHeight: '100vh',
+            boxShadow: '0 0 0 2px #181f2e, 0 0 32px 4px rgba(99,102,241,0.12), 0 8px 40px 0 rgba(0,0,0,0.7)',
             borderRadius: 56,
-            border: "2.5px solid #181f2e",
-            background: "linear-gradient(135deg, #181f2e 0%, #232b3e 100%)"
+            border: '2.5px solid #181f2e',
+            background: 'linear-gradient(135deg, #181f2e 0%, #232b3e 100%)',
+            position: 'relative'
           }}
         >
           {/* Dynamic Island for desktop */}
@@ -110,7 +109,7 @@ function App() {
             </div>
           )}
           {/* Content area: less top padding for Home page */}
-          <div className={`${location === '/' ? 'pt-32' : 'pt-48'} pb-4 px-4 h-full overflow-y-auto bg-gray-900 rounded-b-3xl premium-content-shadow`}>
+          <div className={`${location === '/' ? 'pt-32' : 'pt-48'} pb-4 pt-8 pb-8 px-6 h-full overflow-y-auto premium-content-shadow`}>
             <Suspense fallback={<Loader />}>
               <Routes>
                 {pages.map((page) => (
@@ -138,18 +137,6 @@ function App() {
           </div>
         </div>
       </div>
-      {/* Responsive: Remove iPhone frame on mobile */}
-      <style>{`
-        @media (max-width: 768px) {
-          div[style*='width: 430px'] {
-            width: 100vw !important;
-            height: 100vh !important;
-            border: none !important;
-            border-radius: 0 !important;
-            box-shadow: none !important;
-          }
-        }
-      `}</style>
     </Router>
   );
 }
