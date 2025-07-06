@@ -129,24 +129,7 @@ function MobileNavigation() {
 
 
 function Footer() {
-  return (
-    <footer className="glass border-t border-gray-700/50 py-4 px-4 text-center">
-      <div className="text-sm text-gray-400">
-        © 2024 <span className="glowy-text font-semibold">Yash Nandwani</span>. All rights reserved.
-      </div>
-      <div className="text-xs text-gray-500 mt-1 flex items-center justify-center space-x-1">
-        <span>Built with</span>
-        <div className="text-red-400">
-          <HiHeart size={12} />
-        </div>
-        <span>using</span>
-        <div className="text-indigo-400">
-          <HiCodeBracket size={12} />
-        </div>
-        <span>React, TypeScript & Tailwind CSS</span>
-      </div>
-    </footer>
-  );
+  return null;
 }
 
 function App() {
@@ -181,15 +164,6 @@ function App() {
             </div>
           )}
           
-          {/* Modern Desktop Navigation */}
-          {!isMobile && (
-            <div style={{ position: 'absolute', top: 62, left: '50%', transform: 'translateX(-50%)', width: '92%', zIndex: 20, display: 'flex', justifyContent: 'center' }}>
-              <div style={{ width: 400, maxWidth: '100%' }}>
-                <Navbar />
-              </div>
-            </div>
-          )}
-          
           {/* Mobile Navigation */}
           {isMobile && <MobileNavigation />}
           
@@ -215,13 +189,12 @@ function App() {
             </Routes>
           </div>
           
-          {/* Sticky Footer */}
+          {/* Sticky Navbar at the bottom for all devices */}
           <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, zIndex: 40 }}>
-            <Footer />
+            <Navbar />
           </div>
         </div>
       </div>
-      
       {/* Responsive: Remove iPhone frame on mobile */}
       <style>{`
         @media (max-width: 768px) {
