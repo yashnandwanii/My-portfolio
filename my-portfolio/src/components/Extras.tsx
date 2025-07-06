@@ -72,7 +72,7 @@ const Extras: React.FC = () => (
               <div className="text-4xl">{achievement.icon}</div>
               <div className="flex-1">
                 <h4 className="text-lg font-semibold text-white mb-1 text-glow">{achievement.title}</h4>
-                <p className="text-gray-300 text-sm mb-2">{achievement.description}</p>
+                <p className="text-white text-sm mb-2 text-shadow">{achievement.description}</p>
                 <span className="inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                   {achievement.stats}
                 </span>
@@ -110,7 +110,7 @@ const Extras: React.FC = () => (
               {interest.items.map((item, itemIdx) => (
                 <motion.span
                   key={itemIdx}
-                  className="px-4 py-2 bg-gray-700/50 text-gray-300 text-sm rounded-full border border-gray-600 hover:border-indigo-500 transition-colors duration-200 glow-on-hover"
+                  className="px-4 py-2 bg-gray-700/50 text-indigo-100 text-sm rounded-full border border-gray-600 hover:border-indigo-500 transition-colors duration-200 glow-on-hover text-shadow"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: 1.2 + (idx * 0.2) + (itemIdx * 0.1) }}
@@ -133,7 +133,7 @@ const Extras: React.FC = () => (
       transition={{ duration: 0.6, delay: 1.8 }}
     >
       <h3 className="text-xl font-semibold text-white mb-4 text-glow">Get In Touch</h3>
-      <p className="text-gray-300 mb-4">
+      <p className="text-white mb-4 text-shadow">
         I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology!
       </p>
       <div className="flex justify-center space-x-4">

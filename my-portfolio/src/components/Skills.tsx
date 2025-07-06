@@ -62,7 +62,7 @@ const SkillBar: React.FC<{ skill: { name: string; level: number }; delay: number
   >
     <div className="flex justify-between items-center mb-2">
       <span className="text-gray-300 font-medium text-glow">{skill.name}</span>
-      <span className="text-gray-400 text-sm">{skill.level}%</span>
+      <span className="text-indigo-100 text-sm text-shadow">{skill.level}%</span>
     </div>
     <div className="w-full bg-gray-700 rounded-full h-2">
       <motion.div
@@ -145,6 +145,7 @@ const Skills: React.FC = () => (
           >
             <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mr-3"></span>
             <span className="text-gray-300 text-sm">{skill}</span>
+            <span className="text-white text-sm text-shadow">{skill}</span>
           </motion.div>
         ))}
       </div>

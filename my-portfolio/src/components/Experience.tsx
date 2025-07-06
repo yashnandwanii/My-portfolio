@@ -58,7 +58,7 @@ const Experience: React.FC = () => (
             </div>
             <div className="text-sm text-gray-400 md:text-right">
               <div className="font-medium">{exp.period}</div>
-              <div className="text-gray-500">{exp.location}</div>
+              <div className="text-indigo-100 text-shadow">{exp.location}</div>
             </div>
           </div>
           
@@ -67,7 +67,7 @@ const Experience: React.FC = () => (
             {exp.highlights.map((highlight, i) => (
               <motion.li 
                 key={i}
-                className="text-gray-300 leading-relaxed flex items-start"
+                className="text-white leading-relaxed flex items-start text-shadow"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: (idx * 0.2) + (i * 0.1) }}

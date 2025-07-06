@@ -51,7 +51,7 @@ const Projects: React.FC = () => (
           {/* Project Header */}
           <div className="mb-4">
             <h3 className="text-xl font-semibold text-white mb-2 text-glow">{project.name}</h3>
-            <p className="text-gray-300 leading-relaxed">{project.description}</p>
+            <p className="text-white leading-relaxed text-shadow">{project.description}</p>
           </div>
           
           {/* Tech Stack */}
@@ -61,7 +61,7 @@ const Projects: React.FC = () => (
               {project.tech.map((tech, i) => (
                 <motion.span 
                   key={i}
-                  className="px-3 py-1 bg-gray-700/50 text-gray-300 text-xs rounded-full border border-gray-600"
+                  className="px-3 py-1 bg-gray-700/50 text-indigo-100 text-xs rounded-full border border-gray-600 text-shadow"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: (idx * 0.2) + (i * 0.1) }}
@@ -79,7 +79,7 @@ const Projects: React.FC = () => (
               {project.features.map((feature, i) => (
                 <motion.li 
                   key={i}
-                  className="text-gray-300 text-sm flex items-center"
+                  className="text-white text-sm flex items-center text-shadow"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: (idx * 0.2) + (i * 0.1) }}
