@@ -9,10 +9,9 @@ const experiences = [
     period: "Jun 2025 – Present",
     location: "Remote",
     highlights: [
-      "Led backend development for the FitStart platform, architecting scalable services to handle 5K+ daily user authentications, pass validations, and gym partner interactions.",
-      "Engineered robust APIs and business logic for GymCard, FitCard, and daily pass systems, driving a 55% increase in user retention and boosting platform engagement.",
-      "Integrated real-time check-in and QR pass redemption features using WebSockets and secure token validation, reducing gym entry latency by 40%.",
-      "Collaborated cross-functionally to onboard 100+ gym partners during MVP launch, aligning backend workflows with business logic and reducing partner integration time by 60%."
+      "Built scalable backend handling 5K+ daily authentications, boosting user retention by 55% via GymCard and FitCard.",
+      "Implemented real-time QR redemption with WebSockets, cutting gym entry latency by 40%.",
+      "Onboarded 100+ gym partners during MVP, reducing setup time by 60%."
     ]
   },
   {
@@ -21,10 +20,9 @@ const experiences = [
     period: "Feb 2025 – May 2025",
     location: "Remote",
     highlights: [
-      "Designed and implemented a scalable RESTful backend for a Personal Finance Tracker using Node.js and Express, handling budget planning, goal tracking, and expense categorization.",
-      "Built and optimized MongoDB schemas to support efficient querying and storage for 10K+ user records, improving data retrieval speed by 45%.",
-      "Established secure access controls using JWT-based authentication and middleware, ensuring data protection and compliance with best practices.",
-      "Collaborated in an agile team of 6, contributing to sprint planning, version control (Git), and CI/CD workflows, reducing deployment time by 30%."
+      "Developed REST backend for Personal Finance Tracker (Node/Express), supporting 10K+ users with 45% faster data retrieval.",
+      "Added JWT authentication and secure middleware for robust data protection.",
+      "Collaborated in agile team, managing Git workflows and CI/CD, reducing deployment time by 30%."
     ]
   }
 ];

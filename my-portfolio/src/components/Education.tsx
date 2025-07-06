@@ -14,21 +14,79 @@ const education = [
       "Active member of coding clubs and hackathon communities",
       "Participated in various technical workshops and seminars"
     ]
+  },
+  {
+    degree:"12th",
+    school:"Modern Senior Secondary School",
+    period:"2020 - 2021",
+    location:"Rewari, Haryana",
+    gpa:"9.02/10",
+    highlights:["Relevant Coursework: Mathematics, Physics, Chemistry, Computer Science, English"]
+  },
+  {
+    degree:"10th",
+    school:"Modern Senior Secondary School",
+    period:"2018 - 2019",
+    location:"Rewari, Haryana",
+    gpa:"9.15/10",
+    highlights:["Relevant Coursework: Mathematics, English, Hindi, Social Science, Science, "]
   }
 ];
 
 const certifications = [
   {
-    name: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    date: "2024",
-    credential: "AWS-CCP-123456"
+    name: "Cloud Computing",
+    issuer: "NPTEL",
+    date: "2025",
+    credential: "https://drive.google.com/file/d/1koUcHkyXaxOtBWTdxw5fE1SpF4-rvJnq/view?usp=drive_link"
   },
   {
-    name: "Google Cloud Platform Fundamentals",
-    issuer: "Google Cloud",
-    date: "2024",
-    credential: "GCP-FUND-789012"
+    name: "Backend Development",
+    issuer: "Physics Wallah",
+    date: "2025",
+    credential: "https://drive.google.com/file/d/1I_F9mNUvd1tpEZBG3CxTykJ5OGO_Muuq/view?usp=drive_link"
+  },
+  {
+    name: "Flutter Development ",
+    issuer: "Udemy",
+    date: "2025",
+    credential: "https://drive.google.com/file/d/1v68i1Xr_b9N1SUoAVFY3rt57AVc34DH6/view?usp=drive_link"
+  },
+  {
+    name: "Java Basics",
+    issuer: "Sololearn",
+    date: "2025",
+    credential: "https://drive.google.com/file/d/19e5ZHT7IU-3OxiGRuXT5k0pDVF2fpISh/view?usp=drive_link"
+  },
+  {
+    name: "100 Days of LeetCode Badge",
+    issuer: "LeetCode",
+    date: "2025",
+    credential: "https://drive.google.com/file/d/1bSLEQPa1BDidgtM3eQFNg78ED21nnl05/view?usp=drive_link"
+  },
+  {
+    name: "Bits and Bytes of Networking",
+    issuer: "Coursera",
+    date: "2025",
+    credential: "https://drive.google.com/file/d/1KJQuezj6ez2jYmUlz5pFxn_ubcxV-GjV/view?usp=drive_link"
+  },
+  {
+    name: "Getting Started with Artificial Intelligence",
+    issuer: "IBM",
+    date: "2025",
+    credential: "https://drive.google.com/file/d/1tZIJ3GfJOMApZ-txHanP0_Qu_h3omsI9/view?usp=drive_link"
+  },
+  {
+    name: "Marketing Analytics",
+    issuer: "NPTEL",
+    date: "2025",
+    credential: "https://drive.google.com/file/d/1DU5eykAJ-XHlLRANr5kKGfywoBkancv7/view?usp=drive_link"
+  },
+  {
+    name: "MongoDB Certification",
+    issuer: "MongoDB University",
+    date: "2025",
+    credential: "https://drive.google.com/file/d/1a7FfthSzGOz9HzkuVW8XW60DuySWXOAp/view?usp=drive_link"
   }
 ];
 
