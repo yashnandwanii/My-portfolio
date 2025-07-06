@@ -1,9 +1,11 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
-import AnimatedBackground from "./AnimatedBackground";
+import Loader from "./Loader";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+
+const AnimatedBackground = lazy(() => import("./AnimatedBackground"));
 
 const socials = [
   { name: "Email", url: "mailto:yashnandwani47@gmail.com", icon: <HiOutlineMail size={28} color="#6366f1" /> },
@@ -15,7 +17,9 @@ const socials = [
 const Home: React.FC = () => (
   <div className="relative flex flex-col items-center justify-center h-full text-center p-4 space-y-8 overflow-hidden">
     {/* Animated Background - positioned within the iPhone frame */}
-    <AnimatedBackground />
+    <Suspense fallback={<Loader />}>
+      <AnimatedBackground />
+    </Suspense>
     
     {/* Content Layer */}
     <div className="relative z-10 flex flex-col items-center justify-center h-full space-y-8">
@@ -31,6 +35,9 @@ const Home: React.FC = () => (
           src="https://i.ibb.co/rKSZxfh6/IMG-2216.jpg"
           alt="Yash Nandwani"
           className="w-full h-full object-cover rounded-full profile-image"
+          loading="lazy"
+          style={{ filter: 'blur(8px)', transition: 'filter 0.4s' }}
+          onLoad={e => (e.currentTarget.style.filter = 'blur(0)')}
         />
       </motion.div>
 

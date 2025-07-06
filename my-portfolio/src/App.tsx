@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { 
   HiHome, 
   HiBriefcase, 
@@ -13,6 +13,7 @@ import {
   HiHeart,
   HiCodeBracket
 } from "react-icons/hi2";
+import Loader from "./components/Loader";
 import Experience from "./components/Experience";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
@@ -48,7 +49,7 @@ function useIsMobile() {
 }
 
 function DynamicIsland() {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(false);
   
   return (
     <div 
@@ -110,24 +111,26 @@ function App() {
           )}
           {/* Content area: less top padding for Home page */}
           <div className={`${location === '/' ? 'pt-32' : 'pt-48'} pb-4 px-4 h-full overflow-y-auto bg-gray-900 rounded-b-3xl premium-content-shadow`}>
-            <Routes>
-              {pages.map((page) => (
-                <Route
-                  key={page.path}
-                  path={page.path}
-                  element={
-                    page.name === "Home" ? <Home /> :
-                    page.name === "Experience" ? <Experience /> :
-                    page.name === "Projects" ? <Projects /> :
-                    page.name === "Education" ? <Education /> :
-                    page.name === "Skills" ? <Skills /> :
-                    page.name === "Extras" ? <Extras /> :
-                    <Placeholder title={page.name} />
-                  }
-                />
-              ))}
-              <Route path="*" element={<Placeholder title="Home" />} />
-            </Routes>
+            <Suspense fallback={<Loader />}>
+              <Routes>
+                {pages.map((page) => (
+                  <Route
+                    key={page.path}
+                    path={page.path}
+                    element={
+                      page.name === "Home" ? <Home /> :
+                      page.name === "Experience" ? <Experience /> :
+                      page.name === "Projects" ? <Projects /> :
+                      page.name === "Education" ? <Education /> :
+                      page.name === "Skills" ? <Skills /> :
+                      page.name === "Extras" ? <Extras /> :
+                      <Placeholder title={page.name} />
+                    }
+                  />
+                ))}
+                <Route path="*" element={<Placeholder title="Home" />} />
+              </Routes>
+            </Suspense>
           </div>
           {/* Sticky Navbar at the bottom for all devices (now also for mobile) */}
           <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, zIndex: 40 }}>
