@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import PageDivider from "./PageDivider";
 
 const experiences = [
   {
@@ -28,59 +29,71 @@ const experiences = [
   }
 ];
 
-const Experience: React.FC = () => (
-  <div className="p-4 space-y-6">
-    <motion.h2 
-      className="text-2xl font-bold text-center glowy-text mb-8"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      Experience
-    </motion.h2>
-    
-    <div className="space-y-8">
-      {experiences.map((exp, idx) => (
-        <motion.div 
-          key={idx} 
-          className="card hover-lift glow-on-hover"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: idx * 0.2 }}
-        >
-          {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-            <div className="mb-3 md:mb-0">
-              <h3 className="text-xl font-semibold text-white mb-1 text-glow">{exp.company}</h3>
-              <span className="inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-sm font-medium px-3 py-1 rounded-full">
-                {exp.role}
-              </span>
+const Experience: React.FC = () => {
+  return (
+    <div className="relative pb-10 pt-10 px-4 md:px-8 flex flex-col items-center min-h-full">
+      <PageDivider />
+      <motion.h2 
+        className="text-3xl font-bold text-center glowy-text mb-12 mt-2"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        Experience
+      </motion.h2>
+      
+      <div className="w-full max-w-4xl mx-auto space-y-8">
+        {experiences.map((exp, idx) => (
+          <motion.div
+            key={idx}
+            className="group"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: idx * 0.2 }}
+          >
+            <div className="glass bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-2xl p-8 border border-indigo-500/20 hover:border-indigo-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold glowy-text mb-2 group-hover:text-indigo-300 transition-colors">
+                    {exp.company}
+                  </h3>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-sm font-semibold px-4 py-1.5 rounded-full">
+                      {exp.role}
+                    </span>
+                    <span className="text-indigo-200 text-sm font-medium">
+                      {exp.location}
+                    </span>
+                  </div>
+                  <p className="text-indigo-100 text-lg font-medium">
+                    {exp.period}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                {exp.highlights.map((highlight, i) => (
+                  <motion.div
+                    key={i}
+                    className="flex items-start gap-4 p-4 rounded-xl bg-gray-800/30 border border-gray-700/30 hover:border-indigo-500/30 transition-all duration-300"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: idx * 0.2 + i * 0.1 }}
+                    whileHover={{ x: 5 }}
+                  >
+                    <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mt-2.5 flex-shrink-0"></div>
+                    <p className="text-white leading-relaxed text-shadow">
+                      {highlight}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-            <div className="text-sm text-gray-400 md:text-right">
-              <div className="font-medium">{exp.period}</div>
-              <div className="text-indigo-100 text-shadow">{exp.location}</div>
-            </div>
-          </div>
-          
-          {/* Highlights */}
-          <ul className="space-y-3">
-            {exp.highlights.map((highlight, i) => (
-              <motion.li 
-                key={i}
-                className="text-white leading-relaxed flex items-start text-shadow"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: (idx * 0.2) + (i * 0.1) }}
-              >
-                <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                {highlight}
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-      ))}
+          </motion.div>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Experience; 

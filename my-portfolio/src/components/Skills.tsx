@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import PageDivider from "./PageDivider";
 
 const skillCategories = [
   {
@@ -76,7 +77,8 @@ const SkillBar: React.FC<{ skill: { name: string; level: number }; delay: number
 );
 
 const Skills: React.FC = () => (
-  <div className="p-4 space-y-8">
+  <div className="pb-10 pt-10 px-4 md:px-8 space-y-8">
+    <PageDivider />
     <motion.h2 
       className="text-2xl font-bold text-center glowy-text mb-8"
       initial={{ opacity: 0, y: -20 }}

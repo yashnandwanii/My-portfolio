@@ -76,65 +76,10 @@ function DynamicIsland() {
   );
 }
 
-function MobileNavigation() {
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-  
-  return (
-    <>
-      {/* Hamburger Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 right-4 z-50 p-2 rounded-lg bg-gray-800/80 backdrop-blur-sm border border-gray-700 text-white"
-      >
-        {isOpen ? (
-          <HiXMark size={24} />
-        ) : (
-          <HiBars3 size={24} />
-        )}
-      </button>
-      
-      {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-40 transition-all duration-300 ${isOpen ? 'bg-black/50' : 'bg-transparent pointer-events-none'}`}>
-        <div className={`absolute right-0 top-0 h-full w-80 bg-gray-900/95 backdrop-blur-xl border-l border-gray-700 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="p-6 pt-20">
-            <h3 className="text-xl font-bold text-white mb-6 glowy-text">Navigation</h3>
-            <nav className="space-y-4">
-              {pages.map((page) => {
-                const IconComponent = page.icon;
-                return (
-                  <Link
-                    key={page.path}
-                    to={page.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 ${
-                      location.pathname === page.path 
-                        ? 'bg-gradient-to-r from-indigo-500/20 to-purple-600/20 text-white border border-indigo-500/30' 
-                        : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
-                    }`}
-                  >
-                    <IconComponent size={20} />
-                    <span className="font-medium">{page.name}</span>
-                  </Link>
-                );
-              })}
-            </nav>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
-
-
-
-function Footer() {
-  return null;
-}
-
 function App() {
   const isMobile = useIsMobile();
-  
+  const location = window.location.pathname;
+
   return (
     <Router>
       <div className="min-h-screen w-full flex items-center justify-center dark-bg">
@@ -163,12 +108,8 @@ function App() {
               </div>
             </div>
           )}
-          
-          {/* Mobile Navigation */}
-          {isMobile && <MobileNavigation />}
-          
-          {/* Content area */}
-          <div className="pt-48 pb-4 px-4 h-full overflow-y-auto bg-gray-900 rounded-b-3xl premium-content-shadow">
+          {/* Content area: less top padding for Home page */}
+          <div className={`${location === '/' ? 'pt-32' : 'pt-48'} pb-4 px-4 h-full overflow-y-auto bg-gray-900 rounded-b-3xl premium-content-shadow`}>
             <Routes>
               {pages.map((page) => (
                 <Route
@@ -188,8 +129,7 @@ function App() {
               <Route path="*" element={<Placeholder title="Home" />} />
             </Routes>
           </div>
-          
-          {/* Sticky Navbar at the bottom for all devices */}
+          {/* Sticky Navbar at the bottom for all devices (now also for mobile) */}
           <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, zIndex: 40 }}>
             <Navbar />
           </div>

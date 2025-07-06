@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import PageDivider from "./PageDivider";
 
 const achievements = [
   {
@@ -38,7 +39,8 @@ const interests = [
 ];
 
 const Extras: React.FC = () => (
-  <div className="p-4 space-y-8">
+  <div className="p-4 pt-10 space-y-8">
+    <PageDivider />
     <motion.h2 
       className="text-2xl font-bold text-center glowy-text mb-8"
       initial={{ opacity: 0, y: -20 }}

@@ -1,12 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import AnimatedBackground from "./AnimatedBackground";
+import { HiOutlineMail } from "react-icons/hi";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 const socials = [
-  { name: "Email", url: "mailto:yashnandwani47@gmail.com", icon: "✉️" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/yash-nandwani", icon: "💼" },
-  { name: "GitHub", url: "https://github.com/yashnandwani", icon: "🐙" },
-  { name: "LeetCode", url: "https://leetcode.com/yashnandwani/", icon: "🧩" },
+  { name: "Email", url: "mailto:yashnandwani47@gmail.com", icon: <HiOutlineMail size={28} color="#6366f1" /> },
+  { name: "LinkedIn", url: "https://linkedin.com/in/yash-nandwani", icon: <FaLinkedin size={28} color="#0A66C2" /> },
+  { name: "GitHub", url: "https://github.com/yashnandwani", icon: <FaGithub size={28} color="#fff" /> },
+  { name: "LeetCode", url: "https://leetcode.com/yashnandwani/", icon: <SiLeetcode size={28} color="#FFA116" /> },
 ];
 
 const Home: React.FC = () => (
