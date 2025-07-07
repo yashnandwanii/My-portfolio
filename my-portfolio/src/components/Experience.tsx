@@ -40,17 +40,16 @@ const Experience: React.FC = () => {
         Experience
       </motion.h2>
       
-      <div className="w-full max-w-4xl mx-auto space-y-8">
+      <div className="w-full max-w-4xl mx-auto space-y-12">
         {experiences.map((exp, idx) => (
-          <motion.div
-            key={idx}
-            className="group"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: idx * 0.2 }}
-          >
-            <div className="glass bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-2xl p-8 border border-indigo-500/20 hover:border-indigo-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+          <React.Fragment key={idx}>
+            <motion.div
+              className="group"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+            >
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold glowy-text mb-2 group-hover:text-indigo-300 transition-colors">
                     {exp.company}
@@ -68,26 +67,39 @@ const Experience: React.FC = () => {
                   </p>
                 </div>
               </div>
-              
-              <div className="space-y-4">
+              <ul className="space-y-3 pl-2 md:pl-4">
                 {exp.highlights.map((highlight, i) => (
-                  <motion.div
+                  <motion.li
                     key={i}
-                    className="flex items-start gap-4 p-4 rounded-xl bg-gray-800/30 border border-gray-700/30 hover:border-indigo-500/30 transition-all duration-300"
+                    className="flex items-start gap-3"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: idx * 0.2 + i * 0.1 }}
                     whileHover={{ x: 5 }}
                   >
-                    <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mt-2.5 flex-shrink-0"></div>
-                    <p className="text-white leading-relaxed text-shadow">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 shadow-md flex-shrink-0"></span>
+                    <span className="text-white leading-relaxed text-shadow">
                       {highlight}
-                    </p>
-                  </motion.div>
+                    </span>
+                  </motion.li>
                 ))}
-              </div>
-            </div>
-          </motion.div>
+              </ul>
+            </motion.div>
+            {/* Minimal, gradient divider between experiences */}
+            {idx < experiences.length - 1 && (
+              <motion.div
+                className="w-full flex justify-center my-8"
+                initial={{ scaleX: 0, opacity: 0 }}
+                animate={{ scaleX: 1, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.3 + idx * 0.2, type: 'spring' }}
+                style={{ originX: 0.5 }}
+              >
+                <div
+                  className="h-px w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+                />
+              </motion.div>
+            )}
+          </React.Fragment>
         ))}
       </div>
     </div>

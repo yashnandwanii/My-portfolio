@@ -231,7 +231,16 @@ const Education: React.FC = () => (
                       <h4 className="text-lg font-semibold text-white text-glow">{cert.name}</h4>
                     </div>
                     <p className="text-white text-sm text-shadow ml-5">{cert.issuer}</p>
-                    <p className="text-indigo-100 text-xs text-shadow ml-5">Credential: {cert.credential}</p>
+                    {cert.credential && (
+                      <a
+                        href={cert.credential}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-3 ml-5 px-4 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-xs font-semibold rounded-full shadow-md hover:scale-105 transition-transform duration-200 glow-on-hover"
+                      >
+                        Show Credential
+                      </a>
+                    )}
                   </div>
                   <div className="text-right">
                     <span className="inline-block bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-full border border-gray-600 shadow-sm">

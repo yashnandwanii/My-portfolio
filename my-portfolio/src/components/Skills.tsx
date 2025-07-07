@@ -70,7 +70,7 @@ const SkillBar: React.FC<{ skill: { name: string; level: number }; delay: number
 );
 
 const Skills: React.FC = () => (
-  <div className="pb-10 pt-10 px-4 md:px-8 space-y-8">
+  <div className="pb-32 pt-10 px-4 md:px-8 space-y-8">
     <PageDivider />
     <motion.h2 
       className="text-2xl font-bold text-center glowy-text mb-8"
@@ -107,7 +107,7 @@ const Skills: React.FC = () => (
       ))}
     </div>
     
-    {/* Additional Skills */}
+    {/* Hobbies */}
     <motion.div 
       className="card hover-lift glow-on-hover"
       initial={{ opacity: 0, y: 30 }}
@@ -115,34 +115,29 @@ const Skills: React.FC = () => (
       transition={{ duration: 0.6, delay: 1.2 }}
     >
       <h3 className="text-xl font-semibold text-white mb-6 text-center text-glow">
-        Additional Skills
+        Hobbies
       </h3>
-      
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <ul className="space-y-4 px-2 md:px-6">
         {[
-          "Data Structures & Algorithms",
-          "System Design",
-          "RESTful APIs",
-          "SOLID Principles",
-          "Agile/Scrum",
-          "Problem Solving",
-          "Team Collaboration"
-        
-        ].map((skill, idx) => (
-          <motion.div
+          "Pushing my limits at the gym and embracing an active lifestyle",
+          "Exploring new places, cultures, and experiences",
+          "Diving into captivating books and expanding my horizons",
+          "    ",
+          " "
+        ].map((hobby, idx) => (
+          <motion.li
             key={idx}
-            className="flex items-center p-3 bg-gray-700/50 rounded-lg border border-gray-600 glow-on-hover"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 1.4 + (idx * 0.1) }}
-            whileHover={{ scale: 1.05 }}
+            className="flex items-start gap-4"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 1.4 + idx * 0.1 }}
+            whileHover={{ x: 5 }}
           >
-            <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mr-3"></span>
-            <span className="text-gray-300 text-sm">{skill}</span>
-            <span className="text-white text-sm text-shadow">{skill}</span>
-          </motion.div>
+            <span className="mt-2 w-2 h-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 shadow-md flex-shrink-0"></span>
+            <span className="text-white leading-relaxed text-shadow">{hobby}</span>
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </motion.div>
   </div>
 );
