@@ -5,9 +5,9 @@ import PageDivider from "./PageDivider";
 const achievements = [
   {
     title: "LeetCode Master",
-    description: "Solved 4000+ problems with consistent performance",
+    description: "Solved 400+ problems with consistent performance",
     icon: "🏆",
-    stats: "4000+ Problems"
+    stats: "400+ Problems"
   },
   {
     title: "Hackathon Winner",
