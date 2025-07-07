@@ -20,7 +20,7 @@ const Home: React.FC = () => (
     <Suspense fallback={<Loader />}>
       <AnimatedBackground />
     </Suspense>
-    
+
     {/* Content Layer */}
     <div className="relative z-10 flex flex-col items-center justify-center h-full space-y-8">
       {/* Avatar/Profile Section */}
@@ -58,11 +58,11 @@ const Home: React.FC = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.8 }}
       >
-        Android App Developer | Backend Enthusiast | Tech Explorer
+        Mobile App Developer | Backend Enthusiast | Tech Explorer
       </motion.h2>
 
       {/* Social Links */}
-      <motion.div 
+      <motion.div
         className="flex gap-6 justify-center mb-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -88,13 +88,13 @@ const Home: React.FC = () => (
       </motion.div>
 
       {/* Description */}
-      <motion.p 
+      <motion.p
         className="text-white max-w-md mx-auto leading-relaxed text-glow text-shadow"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
       >
-        Passionate about building scalable apps, solving DSA challenges, and exploring new technologies. 
+        Passionate about building scalable apps, solving DSA challenges, and exploring new technologies.
         Welcome to my interactive portfolio!
       </motion.p>
 
