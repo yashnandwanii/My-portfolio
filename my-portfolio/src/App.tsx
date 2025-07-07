@@ -63,12 +63,15 @@ function DynamicIsland() {
     >
       {isExpanded ? (
         <div className="flex items-center justify-center h-full text-white text-sm">
-          <div className="text-center">
-            <div className="mb-1 flex justify-center">
-              <HiDevicePhoneMobile size={24} />
-            </div>
-            <div className="text-xs opacity-80">Portfolio Active</div>
-          </div>
+          <a
+            href="https://drive.google.com/file/d/1RpN4MfmMThM6WcSz7hcAKD6KN_zbgPdM/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-6 py-2 bg-transparent border border-white text-white text-xs font-semibold rounded-lg no-underline"
+            style={{ minWidth: 120, textDecoration: 'none' }}
+          >
+            View Resume
+          </a>
         </div>
       ) : (
         <div className="flex items-center justify-center h-full">
