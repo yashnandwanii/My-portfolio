@@ -104,11 +104,11 @@ function App() {
           }}
         >
           {/* Dynamic Island for all devices */}
-          <div style={{ position: 'absolute', top: 24, left: '50%', transform: 'translateX(-50%)', zIndex: 30, pointerEvents: 'none' }}>
-            <div style={{ pointerEvents: 'auto' }}>
-              <DynamicIsland />
+            <div style={{ position: 'absolute', top: 24, left: '50%', transform: 'translateX(-50%)', zIndex: 30, pointerEvents: 'none' }}>
+              <div style={{ pointerEvents: 'auto' }}>
+                <DynamicIsland />
+              </div>
             </div>
-          </div>
           {/* Content area: less top padding for Home page */}
           <div className={`${location === '/' ? 'pt-32' : 'pt-48'} pb-4 pt-8 pb-8 px-6 h-full overflow-y-auto premium-content-shadow`}>
             <Suspense fallback={<Loader />}>
