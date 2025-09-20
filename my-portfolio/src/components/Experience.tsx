@@ -4,23 +4,23 @@ import PageDivider from "./PageDivider";
 
 const experiences = [
   {
-    company: "FitStart",
+    company: "Fitstart",
     role: "SE Intern",
     period: "Jun 2025 – Present",
     location: "Remote",
     highlights: [
-      "Built scalable backend handling 5K+ daily authentications, boosting user retention by 55% via GymCard and FitCard.",
-      "Implemented real-time QR redemption with WebSockets, cutting gym entry latency by 40%.",
-      "Onboarded 100+ gym partners during MVP, reducing setup time by 60%."
+      "Led development of a gym discovery module by integrating Google Maps and location-based queries, successfully tested with 50+ partner gyms.",
+      "Integrated immersive 3D gym views, creating interactive previews to enhance user decision-making during pilot testing.",
+      "Implemented a redesigned UI with animations and built-in transitions, resulting in smoother navigation and improved user experience in MVP demos."
     ]
   },
   {
-    company: "SmartBridge",
+    company: "Smartbridge",
     role: "SDE Intern",
     period: "Feb 2025 – May 2025",
     location: "Remote",
     highlights: [
-      "Developed REST backend for Personal Finance Tracker (Node/Express), supporting 10K+ users with 45% faster data retrieval.",
+      "Developed REST backend for Personal Finance Tracker (Node/Express), supporting 10+ users with 45% faster data retrieval.",
       "Added JWT authentication and secure middleware for robust data protection.",
       "Collaborated in agile team, managing Git workflows and CI/CD, reducing deployment time by 30%."
     ]
