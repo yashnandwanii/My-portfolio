@@ -106,11 +106,11 @@ const Home: React.FC = () => (
         transition={{ delay: 1.8, duration: 0.8 }}
       >
         <div className="card text-center glow-on-hover">
-          <div className="text-2xl font-bold glowy-text">400+</div>
+          <div className="text-2xl font-bold glowy-text">800+</div>
           <div className="text-sm text-white text-shadow">DSA Problems</div>
         </div>
         <div className="card text-center glow-on-hover">
-          <div className="text-2xl font-bold glowy-text">5+</div>
+          <div className="text-2xl font-bold glowy-text">10+</div>
           <div className="text-sm text-white text-shadow">Projects</div>
         </div>
       </motion.div>
