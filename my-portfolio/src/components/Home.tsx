@@ -1,11 +1,39 @@
 import React, { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
-import Loader from "./Loader";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
 const AnimatedBackground = lazy(() => import("./AnimatedBackground"));
+
+// Error Boundary for 3D components
+class ThreeErrorBoundary extends React.Component<
+  { children: React.ReactNode; fallback?: React.ReactNode },
+  { hasError: boolean }
+> {
+  constructor(props: { children: React.ReactNode; fallback?: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.warn('3D Background failed to load:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback || (
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-purple-900/20 to-pink-900/20" />
+      );
+    }
+
+    return this.props.children;
+  }
+}
 
 const socials = [
   { name: "Email", url: "mailto:yashnandwani47@gmail.com", icon: <HiOutlineMail size={28} color="#6366f1" /> },
@@ -15,11 +43,17 @@ const socials = [
 ];
 
 const Home: React.FC = () => (
-  <div className="relative flex flex-col items-center justify-center h-full text-center p-4 space-y-8 overflow-hidden">
+  <div className="relative flex flex-col items-center justify-center h-full text-center p-4 pb-32 space-y-8 overflow-hidden">
     {/* Animated Background - positioned within the iPhone frame */}
-    <Suspense fallback={<Loader />}>
-      <AnimatedBackground />
-    </Suspense>
+    <ThreeErrorBoundary fallback={
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-purple-900/20 to-pink-900/20" />
+    }>
+      <Suspense fallback={
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-purple-900/20 to-pink-900/20" />
+      }>
+        <AnimatedBackground />
+      </Suspense>
+    </ThreeErrorBoundary>
 
     {/* Content Layer */}
     <div className="relative z-10 flex flex-col items-center justify-center h-full space-y-8">

@@ -16,7 +16,7 @@ const projects = [
       "25% reduction in cart abandonment, 15% increase in conversions"
     ],
     period: "Feb 2025 – Jun 2025",
-    github: "https://github.com/yashnandwani/meal-monkey",
+    github: "https://github.com/yashnandwanii/Meal-Monkey",
     live: "https://meal-monkey-demo.com"
   },
   {
@@ -80,7 +80,7 @@ const projects = [
 ];
 
 const Projects: React.FC = () => (
-  <div className="pb-10 pt-10 px-4 md:px-8 space-y-6">
+  <div className="pb-32 pt-10 px-4 md:px-8 space-y-6">
     <PageDivider />
     <motion.h2 
       className="text-3xl font-bold text-center glowy-text mb-12 mt-2"

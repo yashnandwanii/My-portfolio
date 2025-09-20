@@ -29,7 +29,7 @@ const experiences = [
 
 const Experience: React.FC = () => {
   return (
-    <div className="relative pb-10 pt-10 px-4 md:px-8 flex flex-col items-center min-h-full">
+  <div className="relative pb-32 pt-10 px-4 md:px-8 flex flex-col items-center min-h-full">
       <PageDivider />
       <motion.h2 
         className="text-3xl font-bold text-center glowy-text mb-12 mt-2"

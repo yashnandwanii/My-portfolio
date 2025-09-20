@@ -5,8 +5,7 @@ import {
   HiBriefcase, 
   HiRocketLaunch, 
   HiAcademicCap, 
-  HiBolt, 
-  HiStar
+  HiBolt
 } from "react-icons/hi2";
 
 const pages = [
@@ -15,7 +14,6 @@ const pages = [
   { name: "Projects", path: "/projects", icon: HiRocketLaunch },
   { name: "Education", path: "/education", icon: HiAcademicCap },
   { name: "Skills", path: "/skills", icon: HiBolt },
-  { name: "Extras", path: "/extras", icon: HiStar },
 ];
 
 const Navbar: React.FC = () => {

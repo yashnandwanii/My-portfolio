@@ -1,19 +1,12 @@
-import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { 
   HiHome, 
   HiBriefcase, 
   HiRocketLaunch, 
   HiAcademicCap, 
-  HiBolt, 
-  HiStar,
-  HiDevicePhoneMobile,
-  HiBars3,
-  HiXMark,
-  HiHeart,
-  HiCodeBracket,
-  HiSun,
-  HiMoon
+  HiBolt,
+ 
 } from "react-icons/hi2";
 import Loader from "./components/Loader";
 import Experience from "./components/Experience";
@@ -21,7 +14,6 @@ import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Skills from "./components/Skills";
-import Extras from "./components/Extras";
 import Navbar from "./components/Navbar";
 
 const pages = [
@@ -30,7 +22,6 @@ const pages = [
   { name: "Projects", path: "/projects", icon: HiRocketLaunch },
   { name: "Education", path: "/education", icon: HiAcademicCap },
   { name: "Skills", path: "/skills", icon: HiBolt },
-  { name: "Extras", path: "/extras", icon: HiStar },
 ];
 
 const Placeholder = ({ title }: { title: string }) => (
@@ -64,7 +55,7 @@ function DynamicIsland() {
       {isExpanded ? (
         <div className="flex items-center justify-center h-full text-white text-sm">
           <a
-            href="https://drive.google.com/file/d/1RpN4MfmMThM6WcSz7hcAKD6KN_zbgPdM/view?usp=sharing"
+            href="https://drive.google.com/file/d/1baux5Lgla1Lccjc88gz4dMYU_zAliF4z/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-2 bg-transparent border border-white text-white text-xs font-semibold rounded-lg no-underline"
@@ -82,62 +73,67 @@ function DynamicIsland() {
   );
 }
 
-function App() {
+function AppContent() {
   const isMobile = useIsMobile();
-  const location = window.location.pathname;
+  const location = useLocation();
 
   return (
-    <Router>
-      <div className="min-h-screen w-full flex items-center justify-center dark-bg">
-        <div
-          className="phone-frame premium-iphone-frame overflow-hidden"
-          style={isMobile ? {} : {
-            width: 520,
-            height: 1040,
-            maxWidth: '100vw',
-            maxHeight: '100vh',
-            boxShadow: '0 0 0 2px #181f2e, 0 0 32px 4px rgba(99,102,241,0.12), 0 8px 40px 0 rgba(0,0,0,0.7)',
-            borderRadius: 56,
-            border: '2.5px solid #181f2e',
-            background: 'linear-gradient(135deg, #181f2e 0%, #232b3e 100%)',
-            position: 'relative'
-          }}
-        >
-          {/* Dynamic Island for all devices */}
-            <div style={{ position: 'absolute', top: 24, left: '50%', transform: 'translateX(-50%)', zIndex: 30, pointerEvents: 'none' }}>
-              <div style={{ pointerEvents: 'auto' }}>
-                <DynamicIsland />
-              </div>
+    <div className="min-h-screen w-full flex items-center justify-center dark-bg">
+      <div
+        className="phone-frame premium-iphone-frame overflow-hidden"
+        style={isMobile ? {} : {
+          width: 520,
+          height: 1040,
+          maxWidth: '100vw',
+          maxHeight: '100vh',
+          boxShadow: '0 0 0 2px #181f2e, 0 0 32px 4px rgba(99,102,241,0.12), 0 8px 40px 0 rgba(0,0,0,0.7)',
+          borderRadius: 56,
+          border: '2.5px solid #181f2e',
+          background: 'linear-gradient(135deg, #181f2e 0%, #232b3e 100%)',
+          position: 'relative'
+        }}
+      >
+        {/* Dynamic Island for all devices */}
+          <div style={{ position: 'absolute', top: 24, left: '50%', transform: 'translateX(-50%)', zIndex: 30, pointerEvents: 'none' }}>
+            <div style={{ pointerEvents: 'auto' }}>
+              <DynamicIsland />
             </div>
-          {/* Content area: less top padding for Home page */}
-          <div className={`${location === '/' ? 'pt-32' : 'pt-48'} pb-4 pt-8 pb-8 px-6 h-full overflow-y-auto premium-content-shadow`}>
-            <Suspense fallback={<Loader />}>
-              <Routes>
-                {pages.map((page) => (
-                  <Route
-                    key={page.path}
-                    path={page.path}
-                    element={
-                      page.name === "Home" ? <Home /> :
-                      page.name === "Experience" ? <Experience /> :
-                      page.name === "Projects" ? <Projects /> :
-                      page.name === "Education" ? <Education /> :
-                      page.name === "Skills" ? <Skills /> :
-                      page.name === "Extras" ? <Extras /> :
-                      <Placeholder title={page.name} />
-                    }
-                  />
-                ))}
-                <Route path="*" element={<Placeholder title="Home" />} />
-              </Routes>
-            </Suspense>
           </div>
-          {/* Sticky Navbar at the bottom for all devices (now also for mobile) */}
-          <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, zIndex: 40 }}>
-            <Navbar />
-          </div>
+        {/* Content area: less top padding for Home page */}
+        <div className={`${location.pathname === '/' ? 'pt-32' : 'pt-48'} pb-4 pt-8 pb-8 px-6 h-full overflow-y-auto premium-content-shadow`}>
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              {pages.map((page) => (
+                <Route
+                  key={page.path}
+                  path={page.path}
+                  element={
+                    page.name === "Home" ? <Home /> :
+                    page.name === "Experience" ? <Experience /> :
+                    page.name === "Projects" ? <Projects /> :
+                    page.name === "Education" ? <Education /> :
+                    page.name === "Skills" ? <Skills /> :
+                    <Placeholder title={page.name} />
+                  }
+                />
+              ))}
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </Suspense>
+        </div>
+        {/* Sticky Navbar at the bottom for all devices (now also for mobile) */}
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, zIndex: 40 }}>
+          <Navbar />
         </div>
       </div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

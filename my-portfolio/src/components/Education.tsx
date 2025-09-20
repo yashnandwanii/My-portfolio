@@ -8,7 +8,7 @@ const education = [
     school: "VIT Bhopal",
     period: "2022 - 2026",
     location: "Bhopal, Madhya Pradesh",
-    gpa: "8.06/10",
+    gpa: "8.36/10",
     highlights: [
       "Relevant Coursework: Data Structures & Algorithms, Database Management Systems, Operating Systems, Computer Networks",
       "Active member of coding clubs and hackathon communities",
@@ -35,10 +35,22 @@ const education = [
 
 const certifications = [
   {
-    name: "Cloud Computing",
-    issuer: "NPTEL",
+    name: "MongoDB Aggregation Fundamentals",
+    issuer: "MongoDB",
     date: "2025",
-    credential: "https://drive.google.com/file/d/1koUcHkyXaxOtBWTdxw5fE1SpF4-rvJnq/view?usp=drive_link"
+    credential: "https://drive.google.com/file/d/1zsrrfYuAhlxImsgKgxL45-eSwEIUUb53/view?usp=sharing"
+  },
+  {
+    name: "MongoDB Certification",
+    issuer: "MongoDB University",
+    date: "2025",
+    credential: "https://drive.google.com/file/d/1a7FfthSzGOz9HzkuVW8XW60DuySWXOAp/view?usp=drive_link"
+  },
+  {
+    name: "Oracle Certified Foundations Associate",
+    issuer: "Oracle University",
+    date: "2025",
+    credential: "https://drive.google.com/file/d/1bJnEYgmmfHf0HIR0v2TBAQfQlh6p-FFt/view?usp=sharing"
   },
   {
     name: "Backend Development",
@@ -47,51 +59,46 @@ const certifications = [
     credential: "https://drive.google.com/file/d/1I_F9mNUvd1tpEZBG3CxTykJ5OGO_Muuq/view?usp=drive_link"
   },
   {
-    name: "Flutter Development ",
-    issuer: "Udemy",
-    date: "2025",
-    credential: "https://drive.google.com/file/d/1v68i1Xr_b9N1SUoAVFY3rt57AVc34DH6/view?usp=drive_link"
-  },
-  {
-    name: "Java Basics",
-    issuer: "Sololearn",
-    date: "2025",
-    credential: "https://drive.google.com/file/d/19e5ZHT7IU-3OxiGRuXT5k0pDVF2fpISh/view?usp=drive_link"
-  },
-  {
-    name: "100 Days of LeetCode Badge",
-    issuer: "LeetCode",
-    date: "2025",
-    credential: "https://drive.google.com/file/d/1bSLEQPa1BDidgtM3eQFNg78ED21nnl05/view?usp=drive_link"
-  },
-  {
-    name: "Bits and Bytes of Networking",
-    issuer: "Coursera",
-    date: "2025",
-    credential: "https://drive.google.com/file/d/1KJQuezj6ez2jYmUlz5pFxn_ubcxV-GjV/view?usp=drive_link"
-  },
-  {
     name: "Getting Started with Artificial Intelligence",
     issuer: "IBM",
     date: "2025",
     credential: "https://drive.google.com/file/d/1tZIJ3GfJOMApZ-txHanP0_Qu_h3omsI9/view?usp=drive_link"
   },
   {
+    name: "Flutter Development",
+    issuer: "Udemy",
+    date: "2024",
+    credential: "https://drive.google.com/file/d/1v68i1Xr_b9N1SUoAVFY3rt57AVc34DH6/view?usp=drive_link"
+  },
+  {
+    name: "Cloud Computing",
+    issuer: "NPTEL",
+    date: "2024",
+    credential: "https://drive.google.com/file/d/1koUcHkyXaxOtBWTdxw5fE1SpF4-rvJnq/view?usp=drive_link"
+  },
+  {
     name: "Marketing Analytics",
     issuer: "NPTEL",
-    date: "2025",
+    date: "2024",
     credential: "https://drive.google.com/file/d/1DU5eykAJ-XHlLRANr5kKGfywoBkancv7/view?usp=drive_link"
   },
   {
-    name: "MongoDB Certification",
-    issuer: "MongoDB University",
-    date: "2025",
-    credential: "https://drive.google.com/file/d/1a7FfthSzGOz9HzkuVW8XW60DuySWXOAp/view?usp=drive_link"
-  }
+    name: "Java Basics",
+    issuer: "Sololearn",
+    date: "2023",
+    credential: "https://drive.google.com/file/d/19e5ZHT7IU-3OxiGRuXT5k0pDVF2fpISh/view?usp=drive_link"
+  },
+  {
+    name: "Bits and Bytes of Networking",
+    issuer: "Coursera",
+    date: "2023",
+    credential: "https://drive.google.com/file/d/1KJQuezj6ez2jYmUlz5pFxn_ubcxV-GjV/view?usp=drive_link"
+  },
+  
 ];
 
 const Education: React.FC = () => (
-  <div className="pb-10 pt-10 px-4 md:px-8 space-y-8">
+  <div className="pb-32 pt-10 px-4 md:px-8 space-y-8">
     <PageDivider />
     <motion.h2 
       className="text-3xl font-bold text-center glowy-text mb-12 mt-2"
@@ -108,7 +115,7 @@ const Education: React.FC = () => (
       <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-purple-600 to-pink-500"></div>
       
       {/* Education Timeline */}
-      <div className="space-y-12">
+      <div className="space-y-20">
         {education.map((edu, idx) => (
           <motion.div 
             key={idx} 
@@ -187,9 +194,9 @@ const Education: React.FC = () => (
     </div>
     
     {/* Certifications Timeline */}
-    <div className="relative mt-16">
+    <div className="relative mt-24">
       <motion.h3 
-        className="text-xl font-semibold text-center glowy-text mb-8"
+        className="text-xl font-semibold text-center glowy-text mb-12"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
