@@ -5,10 +5,10 @@ import PageDivider from "./PageDivider";
 const projects = [
   {
     name: "Meal-Monkey",
-    description: "A food delivery application with seamless real-time order tracking, designed to handle 5,000+ concurrent users and ensure smooth, uninterrupted user experiences across platforms.",
+    description: "A food delivery application with seamless real-time order tracking, designed to handle 10+ concurrent users and ensure smooth, uninterrupted user experiences across platforms.",
     tech: ["Flutter", "Firebase", "NodeJs", "MongoDB", "Google Maps", "Razorpay"],
     features: [
-      "Real-time order tracking for 5,000+ users",
+      "Real-time order tracking for 10+ users",
       "Secure, scalable backend with NodeJs & MongoDB",
       "Robust user authentication and real-time data sync",
       "99.9% uptime infrastructure",
@@ -21,13 +21,13 @@ const projects = [
   },
   {
     name: "Quizzler",
-    description: "A scalable quiz platform for 5,000+ tech students with 10+ topic-wise quizzes covering DevOps, Kubernetes, and Networking.",
-    tech: ["Flutter", "Firebase", "Gemini", "VertexAI"],
+    description: "A scalable quiz platform for 10+ tech students with 10+ topic-wise quizzes covering DevOps, Kubernetes, and Networking.",
+    tech: ["Flutter", "GETX", "Firebase", "Gemini", "REST API"],
     features: [
       "Dynamic quiz generation with Gemini LLM",
       "10+ topic-wise quizzes",
       "Real-time backend with Firebase Firestore & Auth",
-      "Supports 10K+ quiz attempts and user management",
+      "Supports 100+ quiz attempts and user management",
       "80% reduction in manual curation via AI"
     ],
     period: "Nov 2024 – Jun 2025",
@@ -51,7 +51,7 @@ const projects = [
   {
     name: "News App",
     description: "A modern news application with real-time updates, personalized feeds, and push notifications.",
-    tech: ["Flutter", "GetX", "Firebase"],
+    tech: ["Flutter", "GetX", "Firebase", "NEWS API"],
     features: [
       "Personalized news feed",
       "Real-time updates and push notifications",
